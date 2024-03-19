@@ -9,4 +9,8 @@ class FirebaseServices {
       password: password,
     );
   }
+
+  static Future<void> logOut() async {
+    return await FirebaseAuth.instance.signOut();
+  }
 }

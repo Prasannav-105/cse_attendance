@@ -45,7 +45,8 @@ class CommonWidgets {
     );
   }
 
-  static Widget customizedButton({required void Function()? onPressed}) {
+  static Widget customizedButton(
+      {required void Function()? onPressed, String text = "Login"}) {
     return SizedBox(
       width: 200,
       child: OutlinedButton(
@@ -57,13 +58,21 @@ class CommonWidgets {
             side: const MaterialStatePropertyAll(
                 BorderSide(color: Colors.black, width: 2))),
         child: Text(
-          "Login",
+          text,
           style: TextStyle(
               color: Colors.black.withOpacity(.7),
               fontWeight: FontWeight.bold,
               fontSize: 18),
         ),
       ),
+    );
+  }
+
+  static Widget paddedContainer(
+      {required Widget child, required double padding}) {
+    return Container(
+      padding: EdgeInsets.all(padding),
+      child: child,
     );
   }
 }

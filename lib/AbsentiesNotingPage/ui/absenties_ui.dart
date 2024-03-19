@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MarkAbsentiesPage extends StatefulWidget {
-  const MarkAbsentiesPage({super.key});
+  final String Section;
+  const MarkAbsentiesPage({super.key, required this.Section});
 
   @override
   State<MarkAbsentiesPage> createState() => _MarkAbsentiesPageState();
@@ -26,7 +27,7 @@ class _MarkAbsentiesPageState extends State<MarkAbsentiesPage> {
               children: [
                 Text(
                   AbsentiesHelper.titleText,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 const SizedBox(
                   height: 10,
@@ -123,6 +124,20 @@ class _MarkAbsentiesPageState extends State<MarkAbsentiesPage> {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.only(bottom: 15),
+        height: 50,
+        child: ElevatedButton(
+          onPressed: () {},
+          style: const ButtonStyle(
+              backgroundColor:  MaterialStatePropertyAll(Colors.amber)),
+          child: const Text(
+            "Submit Attendance",
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+          ),
+        ),
       ),
     );
   }

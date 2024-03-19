@@ -1,4 +1,5 @@
 import 'package:aamec_cse_attendance_app/AbsentiesNotingPage/ui/absenties_ui.dart';
+import 'package:aamec_cse_attendance_app/Homepage/ui/homepage.dart';
 import 'package:aamec_cse_attendance_app/loginpage/helpers/firebase_services.dart';
 import 'package:aamec_cse_attendance_app/loginpage/helpers/helpers.dart';
 import 'package:aamec_cse_attendance_app/shared/common_shared_components.dart';
@@ -83,7 +84,7 @@ class _LogInPageState extends State<LogInPage> {
                 password: passwordController.text,
               )
                   .then((user) => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (c) => MarkAbsentiesPage())))
+                      .push(MaterialPageRoute(builder: (c) => HomePage())))
                   .onError(
                     (error, stackTrace) => ScaffoldMessenger.of(context)
                         .showSnackBar(

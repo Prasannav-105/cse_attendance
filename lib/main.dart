@@ -1,3 +1,4 @@
+import 'package:aamec_cse_attendance_app/Homepage/ui/homepage.dart';
 import 'package:aamec_cse_attendance_app/firebase_options.dart';
 import 'package:aamec_cse_attendance_app/AbsentiesNotingPage/ui/absenties_ui.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return MarkAbsentiesPage();
+            return HomePage();
           }
           return LogInPage();
         },
